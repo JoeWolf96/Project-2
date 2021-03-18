@@ -1,0 +1,28 @@
+{
+  "name": "warcraft-bounty-hunter",
+  "version": "1.0.0",
+  "description": "project2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoeWolf96/Project-2.git"
+  },
+  "keywords": [
+    "project2"
+  ],
+  "author": "gioele rossi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoeWolf96/Project-2/issues"
+  },
+  "homepage": "https://github.com/JoeWolf96/Project-2#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.1"
+  }
+}

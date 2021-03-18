@@ -12,6 +12,12 @@ USER STORIES
 -as a user i will be redirected to a new page with an image and description of the item  where i 
  could upload an image to prove i completed it . i am able to see all the other images posted by user
 
+-as a user i will be able to update the image with a new image with a form
+
+-as a user i will be able to delete the image i posted with a delete button
+
+
+
 STRETCH GOALS
 
 -as a user i will be rewarded points and appear in a ranking in the main page
@@ -24,7 +30,16 @@ STRETCH GOALS
 
 MODELS
 
--Item.js with an array of all the images of the items to guide the user and their related descriptions
+- Item.js : (mongoDB as a stretch once comfortable)
+  -URL 
+  -Strings
+
+
+- bounties.js:
+  - URL (image)
+  - strings (description/comment)
+  - Date (posted or found)
+  
 
 ROUTES
 
