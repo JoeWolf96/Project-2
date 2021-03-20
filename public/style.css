@@ -1,0 +1,17 @@
+	@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+
+  body {
+  	background-image:url("https://i.imgur.com/TT0xKcC.jpg");
+  	background-size: cover;
+  	font-family: 'Londrina Outline', cursive;
+
+    color: white;
+    background-color: blanchedalmond;
+    text-align: left;
+  }
+  li{
+  	font-size: 30px;
+  }
+  a{
+  	color:black;
+  }

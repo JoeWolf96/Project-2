@@ -1,6 +1,10 @@
 const express = require('express');
  const app = express();
- const PORT = 3000;
+ const port = 3009;
+
+ app.use(methodOverRide('_method'))
+ app.use(express.static('public'))
+ app.use(express.urlencoded({extended: true}))
 
  // Set up Database
  const mongoose = require('mongoose');
@@ -21,3 +25,27 @@ const express = require('express');
  db.on('error', (err)=> { console.log('ERROR: ', err)});
  db.on('connected', ()=> { console.log("mongo connected")})
  db.on('disconnected', ()=> { console.log("mongo disconnected")})
+
+
+//homepage
+app.get(('/bounty'), (req, res) => {
+     res.render('home.ejs')
+ })
+
+app.listen(port, () => {
+     console.log("listening")
+ }) 
+
+//item page
+
+// app.get('/bounty/:id' , (req,res) => { 
+//  	res.render('itemview.ejs' , {
+
+//  		item
+ 		
+//  	})
+
+//  })
+
+
+
