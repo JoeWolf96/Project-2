@@ -1,6 +1,7 @@
 const express = require('express');
  const app = express();
  const port = 3009;
+ const methodOverRide = require('method-override')
 
  app.use(methodOverRide('_method'))
  app.use(express.static('public'))
@@ -28,9 +29,13 @@ const express = require('express');
 
 
 //homepage
+const items = require("./models/bounties.js")
+
 app.get(('/bounty'), (req, res) => {
-     res.render('home.ejs')
+     res.render('home.ejs', { 
+     	items:items})
  })
+ 
 
 app.listen(port, () => {
      console.log("listening")
@@ -38,14 +43,13 @@ app.listen(port, () => {
 
 //item page
 
-// app.get('/bounty/:id' , (req,res) => { 
-//  	res.render('itemview.ejs' , {
+app.get('/bounty/:id' , (req,res) => { 
+ 	res.render('show.ejs' , {
 
-//  		item
+ 		particularItem : items[req.params.id]
  		
-//  	})
+ 	})
 
-//  })
-
+ })
 
 

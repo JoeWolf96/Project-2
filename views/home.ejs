@@ -1,16 +1,33 @@
 <!DOCTYPE html>
- <html lang="en">
 
- <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Warcraft Treasure Hunt</title>
- </head>
+<%- include ('./partials/header.ejs') %>
+
+
 
  <body>
 
      <h1>Warcraft Treasure Hunt</h1>
 
+
+     <ul>
+
+        <% for ( let n=0; n <items.length ; n++) { %>
+        <li>
+        <a href="/items/<%=n%>">
+        <% let name = items[n].name %>
+                 <%= name.charAt(0).toUpperCase() + name.slice(1) %>
+                </li>
+
+         <% } %>
+
+     </ul>
+
+<script src="" async defer></script>
+
  </body>
+
+<%- include ('./partials/footer.ejs') %>
+
+
+
  </html> 
