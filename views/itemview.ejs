@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-
 <%- include ('./partials/header.ejs') %>
 
- <body>
+<link rel="stylesheet" href="./css/style.css">
 
-     <h1>Warcraft Treasure Hunt</h1>
+<body>
 
- </body>
+	<h1>Gotta Catch em ALL</h1>
 
+	<h2><%= items.name %></h2>
 
-	<h2><%= particularPokemon.name %></h2>
-
-	<img class ="pokemonImage" src=<%=particularPokemon.img%>.jpg>
-
-	</html>
+	<img class ="itemImage" src=<%=items.img%>.jpg>
+	
+</body>
+<footer>
+  <%- include ('./partials/footer.ejs') %>
+</footer>
+</html>
 	

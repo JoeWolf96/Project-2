@@ -44,9 +44,9 @@ app.listen(port, () => {
 //item page
 
 app.get('/bounty/:id' , (req,res) => { 
- 	res.render('show.ejs' , {
+ 	res.render('itemview.ejs' , {
 
- 		particularItem : items[req.params.id]
+ 		items : items[req.params.id]
  		
  	})
 

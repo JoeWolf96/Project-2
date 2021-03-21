@@ -1,0 +1,17 @@
+	@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+
+  body {
+  	background-image:url(https://i.imgur.com/iiSM35T.png);
+  	background-size: fill;
+  	font-family: 'Philosopher', sans-serif;
+
+    color: white;
+   
+    text-align: center;
+  }
+  li{
+  	font-size: 30px;
+  }
+  a{
+  	color:red;
+  }
