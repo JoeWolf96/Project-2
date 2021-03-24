@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <%- include ('./partials/header.ejs') %>
+
 <link rel="stylesheet" href="/css/style.css">
 
 
@@ -8,13 +9,16 @@
  <body>
 
      <h1>Warcraft Treasure Hunt</h1>
+     <div class="intro">
+     <h3>Welcome to the Hunt. here you will find the most wanted items in the whole World of Warcraft, challenge yourself and show everyone your luck and dedication by proving you have them. Time to flex! click on an item to begin!</h3>
+     </div>
 
 
      <ul>
 
         <% for ( let n=0; n <items.length ; n++) { %>
         <li>
-        <a href="/items/<%=n%>">
+        <a href="/bounty/<%=n%>">
         <% let name = items[n].name %>
                  <%= name.charAt(0).toUpperCase() + name.slice(1) %>
                 </li>

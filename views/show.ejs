@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<%- include ('./partials/header.ejs') %>
+
+<link rel="stylesheet" href="/css/style.css">
+
+<body>
+    <h1>Warcraft Treasure Hunter</h1>
+
+	<h2><%= particularItems.name %></h2>
+
+	<img class ="itemImage" src=<%=particularItems.img%>.jpg>
+   <div class ="description">
+	<p><%= particularItems.description %></p>
+   </div>
+
+	<a href="/bounty/:id/new">Upload your Image</a>
+	
+</body>
+
+  <%- include ('./partials/footer.ejs') %>
+
+</html>
+	
