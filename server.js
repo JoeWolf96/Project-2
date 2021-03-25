@@ -2,7 +2,8 @@ const express = require('express');
  const app = express();
  const port = 3008;
  const methodOverRide = require('method-override')
- const bounties = require("./models/bounties.js")
+ const Bounties = require("./models/bounties.js")
+ const seed = require('./models/seed.js')
 
  app.use(methodOverRide('_method'))
  app.use(express.static('public'))
@@ -11,8 +12,8 @@ const express = require('express');
  // Set up Database
  const mongoose = require('mongoose');
 
- // basiccrud is the name of the database we will use/create
- const mongoURI = "mongodb://127.0.0.1:27017/basiccrud"
+ 
+ const mongoURI = "mongodb://127.0.0.1:27017/bounties"
 
  const db = mongoose.connection;
 
@@ -39,33 +40,36 @@ app.get(('/bounty'), (req, res) => {
  })
  
 
-
+Bounties.create( seed , (err,data) =>{
+  if (err) console.log(err.message)
+    console.log("added data",data)
+})
 
 //item page
 
-app.get('/bounty/:id' , (req,res) => { 
- 	res.render('show.ejs' , {
+// app.get('/bounty/:id' , (req,res) => { 
+//  	res.render('show.ejs' , {
 
- 		particularItems:bounties[req.params.id]
+//  		particularItems:bounties[req.params.id]
  		
- 	})
+//  	})
 
- })
+//  })
 //new page
-app.get('/bounty/:id/new', (req, res) => {
+// app.get('/bounty/:id/new', (req, res) => {
 
-  res.render('new.ejs', {
-  	particularItems:bounties[req.params.id]
-  })
-})
+//   res.render('new.ejs', {
+//   	particularItems:bounties[req.params.id]
+//   })
+// })
 
 //post
 
-app.post('/bounty/:id', (req, res) => {
-  particularItems:bounties[req.params.id]
-  bounties.push(req.body)
-  res.redirect('/bounty/:id')
-})
+// app.post('/bounty/:id', (req, res) => {
+//   particularItems:bounties[req.params.id]
+//   bounties.push(req.body)
+//   res.redirect('/bounty/:id')
+// })
 
 
 
