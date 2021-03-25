@@ -1,20 +1,19 @@
-const express = require('express');
+ const express = require('express');
  const app = express();
  const port = 3008;
  const methodOverRide = require('method-override')
- const Bounties = require("./models/bounties.js")
- const seed = require('./models/seed.js')
-
+//
+ const Bounties = require('./models/bounties')
+ const seed = require('./models/seed')
+//
  app.use(methodOverRide('_method'))
  app.use(express.static('public'))
  app.use(express.urlencoded({extended: true}))
 
+
  // Set up Database
  const mongoose = require('mongoose');
-
- 
  const mongoURI = "mongodb://127.0.0.1:27017/bounties"
-
  const db = mongoose.connection;
 
  mongoose.connect(mongoURI, {
@@ -29,21 +28,18 @@ const express = require('express');
  db.on('connected', ()=> { console.log("mongo connected")})
  db.on('disconnected', ()=> { console.log("mongo disconnected")})
 
+//controller
 
-//homepage
+const controller = require('./controllers/bountiescontrollers.js')
 
-
-
-app.get(('/bounty'), (req, res) => {
-     res.render('index.ejs', { 
-     	items:bounties})
- })
+app.use('/bounty', controller);
  
 
 Bounties.create( seed , (err,data) =>{
   if (err) console.log(err.message)
     console.log("added data",data)
 })
+
 
 //item page
 

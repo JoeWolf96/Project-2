@@ -1,21 +1,35 @@
 const express = require('express');
 const router = express.Router();
 
-const Bounties= require('../models/bounties')
+ const Bounties = require('../models/bounties')
+ const seed = require('../models/seed')
 
 
-router.get('/', (req, res) => {
-    // render an index.ejs template w/list of fruits
 
-
-    // add a database query to get the fruits
-    // in the callback render the template and pass the fruits from the database
+router.get('/bounty', (req, res) => {
+     
     Bounties.find({}, (err, foundBounties, next) => {
-        if (err) { 
-            console.log(err)
-            next(err)
-        } else {
-            res.render('home.ejs')
-        }
+           res.render('index.ejs', { 
+        items:seed})
+        
     })
 })
+
+
+//new
+
+router.get('/new', (req, res) => {
+    res.render('new.ejs');
+})
+
+//show route
+router.get('/:id', (req, res) => {
+    Bounties.findById(req.params.id, (err, foundBounties) => {
+        res.render('show.ejs', { particularItems: seed })
+    })
+})
+
+
+
+
+module.exports = router;
