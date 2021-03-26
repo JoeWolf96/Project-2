@@ -1,0 +1,47 @@
+.parent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.div1 {
+ grid-area: 1 / 1 / 6 / 2;
+ color:#a85a32;
+  }
+.div2 { 
+	grid-area: 1 / 2 / 6 / 5; 
+  color:#a85a32;
+}
+.div3 { 
+	grid-area: 1 / 5 / 6 / 6; 
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+
+  body {
+  	background-image:url(https://i.imgur.com/iiSM35T.png);
+  	background-size: center;
+  	font-family: 'Philosopher', sans-serif;
+
+    color: gray;
+   
+    text-align: center;
+  }
+  li{
+  	font-size: 30px;
+  }
+  a{
+  	color:#e0c40b;
+  }
+  .intro{
+    color:#f59871;
+    text-shadow: 2px 2px #ff0000
+  }
+  .description{
+    color:#f59871;
+    text-align: center
+
+  }

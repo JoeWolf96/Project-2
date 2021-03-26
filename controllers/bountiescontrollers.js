@@ -48,8 +48,33 @@ router.post('/', (req, res) => {
         }
      })
  })
+//delete
+router.delete('/:id', (req, res) => {
+    Bounties.findByIdAndRemove(req.params.id, (err, data) => {
+        if (err) {
+            console.log(err)
+        } else {
+            
+            res.redirect('/bounty')
+        }
+    })
+})
+//EDIT
 
- 
+router.get('/:id/edit', (req, res) => {
+    Bounties.findById(req.params.id, (err, foundBounties) => {
+        res.render('edit.ejs', {
+            seed: foundBounties // passes in foundFruit
+        })
+
+    })
+})
+//PUT after edit
+ router.put('/:id', (req, res) => {
+    Bounties.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedBounties) => {
+        res.redirect('/bounty')
+    })
+})
 
 
 

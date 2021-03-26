@@ -1,26 +1,51 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <link rel="stylesheet" href="/css/style.css">
-  <body>
-    <h1>Warcraft Treasure Hunt</h1>
-    <ul>
-      <% for(let i = 0; i < seed.length; i++ ) { %>
-        <li>
+<head>
+
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<link rel="stylesheet" href="/css/style_index.css">
+<body>
+  <h1>Warcraft Treasure Hunt</h1>
+
+
+  <div class="parent">
+    <div class="div1">
+     <ul>
+        <a href="/bounty/new">Upload your Image</a>
+
+        </div>
+
+        <div class="div2">
+        
+        <h2>welcome heroes of Azeroth , here you will see the images of some of the most rare items in the game. Do you have them? Did you go through countless hours of farming and stress just to get your hands on one of this mounts or items? then let everyone aknowledge your effort! upload a picture of your achievements and prove it.</h2>
+
+        </div>
+
+        <div class="div3">
+        <img src = 'https://i.imgur.com/IWaJwvs.png'width="200" height ="100" />
+        <p>The Tusks of Mannoroth. The skull of the Demon killed by Grom Hellscream and passed down to his son Grommash who decided to make it an ornament as a symbol of power. Drop rate ? from 0.1% to 0.3% , located in the raid Siege of Orgrimmar</p>
+        <img src ='https://i.imgur.com/cxVNSnu.png'width="200" height ="200" />
+        <p> The Big Rocket of Love! extremely rare mount obtainable only during the S.Valentine event and with a Drop rate of 1% </p> 
+         </div>
+  </div>
+        <ul>
+        <% for(let i = 0; i < seed.length; i++ ) { %>
+          <li>
           <a href="/bounty/<%=seed[i].id%>"> <%= seed[i].name %></a>
-
-
-          
+           <form method="POST" action="/bounty/<%= seed[i].id %>?_method=DELETE">
+            <button>Delete</button>
+          </form>
+          <p><a href="/bounty/<%=seed[i].id%>/edit">Edit</a></p>
           <% } %>
 
-         
+
         </li>
-    </ul>
-    <a href="/bounty/new">Upload your Image</a>
-  </body>
-</html>
+           
+      </ul>
+    
+
+    </body>
+    </html>
