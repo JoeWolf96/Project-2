@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
 
 
 
-//POST to id
+//POST 
 
 router.post('/', (req, res) => {
         Bounties.create(req.body, (error, createdBounty) => {
@@ -45,6 +45,8 @@ router.post('/', (req, res) => {
             console.log(createdBounty)
             console.log(req.params.id)
             res.redirect('/bounty')
+            appendTo(".div2")
+
         }
      })
  })

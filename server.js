@@ -2,6 +2,10 @@
  const app = express();
  const port = 3008;
  const methodOverRide = require('method-override')
+ //heroku
+ require('dotenv').config()
+ const PORT = process.env.PORT
+ const mongodbURI = process.env.MONGODBURI
 //
  const Bounties = require('./models/bounties')
  const seed = require('./models/seed')
