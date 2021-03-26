@@ -34,38 +34,18 @@ const controller = require('./controllers/bountiescontrollers.js')
 
 app.use('/bounty', controller);
  
+//create files comment out to not duplicate
 
-Bounties.create( seed , (err,data) =>{
-  if (err) console.log(err.message)
-    console.log("added data",data)
-})
-
-
-//item page
-
-// app.get('/bounty/:id' , (req,res) => { 
-//  	res.render('show.ejs' , {
-
-//  		particularItems:bounties[req.params.id]
- 		
-//  	})
-
-//  })
-//new page
-// app.get('/bounty/:id/new', (req, res) => {
-
-//   res.render('new.ejs', {
-//   	particularItems:bounties[req.params.id]
-//   })
+// Bounties.create( seed , (err,data) =>{
+	
+//   if (err){console.log(err)
+//     } else {
+//     console.log("added data"+data)
+//     }
+//   // db.close()
 // })
 
-//post
 
-// app.post('/bounty/:id', (req, res) => {
-//   particularItems:bounties[req.params.id]
-//   bounties.push(req.body)
-//   res.redirect('/bounty/:id')
-// })
 
 
 

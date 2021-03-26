@@ -1,38 +1,26 @@
+
 <!DOCTYPE html>
-
-<%- include ('./partials/header.ejs') %>
-
-<link rel="stylesheet" href="/css/style.css">
-
-
-
- <body>
-
-     <h1>Warcraft Treasure Hunt</h1>
-     <div class="intro">
-     <h3>Welcome to the Hunt. here you will find the most wanted items in the whole World of Warcraft, challenge yourself and show everyone your luck and dedication by proving you have them. Time to flex! click on an item to begin!</h3>
-     </div>
-
-
-     <ul>
-
-        <% for ( let n=0; n <items.length ; n++) { %>
+<html>
+  <head>
+    
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <link rel="stylesheet" href="/css/style.css">
+  <body>
+    <h1>Warcraft Treasure Hunt</h1>
+    <ul>
+      <% for(let i = 0; i < seed.length; i++ ) { %>
         <li>
-        <a href="/bounty/<%=n%>">
-        <% let name = items[n].name %>
-                 <%= name.charAt(0).toUpperCase() + name.slice(1) %>
-                </li>
-
-         <% } %>
-
-     </ul>
-
-<script src="" async defer></script>
-
- </body>
-
-<%- include ('./partials/footer.ejs') %>
+          <a href="/bounty/<%=seed[i].id%>"> <%= seed[i].name %></a>
 
 
+          
+          <% } %>
 
- </html> 
+         
+        </li>
+    </ul>
+    <a href="/bounty/new">Upload your Image</a>
+  </body>
+</html>

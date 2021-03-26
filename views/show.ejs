@@ -6,15 +6,14 @@
 <body>
     <h1>Warcraft Treasure Hunter</h1>
 
-	<h2><%= particularItems.name %></h2>
+	<h2><%= seed.name %></h2>
 
-	<img class ="itemImage" src=<%=particularItems.img%>.jpg>
+	<img class ="itemImage" src='<%=seed.img%>'></img>
+
    <div class ="description">
-	<p><%= particularItems.text %></p>
+	<p><%= seed.text %></p>
    </div>
 
-	<a href="/bounty/:id/new">Upload your Image</a>
-	
 </body>
 
   <%- include ('./partials/footer.ejs') %>

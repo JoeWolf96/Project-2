@@ -6,29 +6,50 @@ const router = express.Router();
 
 
 
-router.get('/bounty', (req, res) => {
+router.get('/', (req, res) => {
      
-    Bounties.find({}, (err, foundBounties, next) => {
+    Bounties.find({}, (err, foundBounties) => {
            res.render('index.ejs', { 
-        items:seed})
+        seed:foundBounties })
         
     })
 })
-
-
 //new
 
 router.get('/new', (req, res) => {
     res.render('new.ejs');
 })
-
 //show route
 router.get('/:id', (req, res) => {
+    console.log(req.params.id)
     Bounties.findById(req.params.id, (err, foundBounties) => {
-        res.render('show.ejs', { particularItems: seed })
+        console.log(foundBounties)
+        res.render('show.ejs', { seed: foundBounties })
+        
+        
     })
 })
 
+
+
+
+//POST to id
+
+router.post('/', (req, res) => {
+        Bounties.create(req.body, (error, createdBounty) => {
+        if (error) {
+            console.log(error);
+            res.send(error);
+        }
+        else {
+            console.log(createdBounty)
+            console.log(req.params.id)
+            res.redirect('/bounty')
+        }
+     })
+ })
+
+ 
 
 
 

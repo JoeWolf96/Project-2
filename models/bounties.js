@@ -4,9 +4,8 @@ const {Schema, model}= mongoose;
 
 const bountiesSchema = new Schema({
 	name: {type:String},
-	image: {type:String},
+	img: {type:String},
 	text: {type:String},
-	date:{type:Date},
 
 })
 
