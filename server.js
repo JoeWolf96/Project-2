@@ -16,22 +16,33 @@
 
 
  // Set up Database
- const mongoose = require('mongoose');
- const mongoURI = "mongodb+srv://LICHqueen96:bounty00@cluster0.ldlbu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
- const db = mongoose.connection;
+ // const mongoose = require('mongoose');
+ // const mongoURI = "mongodb+srv://LICHqueen96:bounty00@cluster0.ldlbu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+ // const db = mongoose.connection;
 
- mongoose.connect(mongoURI, {
-     useFindAndModify: false,
-     useNewUrlParser: true,
-     useUnifiedTopology: true
- }, ()=>{
-     console.log("database connection checked");
- })
+ // mongoose.connect(mongoURI, {
+ //     useFindAndModify: false,
+ //     useNewUrlParser: true,
+ //     useUnifiedTopology: true
+ // }, ()=>{
+ //     console.log("database connection checked");
+ // })
 
- db.on('error', (err)=> { console.log('ERROR: ', err)});
- db.on('connected', ()=> { console.log("mongo connected")})
- db.on('disconnected', ()=> { console.log("mongo disconnected")})
+ // db.on('error', (err)=> { console.log('ERROR: ', err)});
+ // db.on('connected', ()=> { console.log("mongo connected")})
+ // db.on('disconnected', ()=> { console.log("mongo disconnected")})
 
+
+ //code found on atlas 
+
+ const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://LICHqueen96:<password>@cluster0.ldlbu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 //controller
 
 const controller = require('./controllers/bountiescontrollers.js')
