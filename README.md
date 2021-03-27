@@ -1,5 +1,5 @@
 # wireframe and user stories
-![wireframe](/images/main_page.png)
+![wireframe](/images/main_page2.png)
 ![wireframe](/images/show_page.png)
 ![wireframe](/images/new_page.png)
 
