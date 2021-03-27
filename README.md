@@ -5,12 +5,13 @@
 
 USER STORIES
 
--as a user i will see the main page and see the list of the items 
+-as a user i will see the main page and see the items required to be posted]
 
--as a user i will be able to click on a specific item 
+-as a user i can upload my image through URL with my name and a comment and then redirected to the main page
 
--as a user i will be redirected to a new page with an image and description of the item  where i 
- could upload an image to prove i completed it . i am able to see all the other images posted by user
+-as a user i will be able to click on another user posted image
+
+-as a user i will be able to delete or edit my uploaded image with a precompiled form
 
 -as a user i will be able to update the image with a new image with a form
 
@@ -28,6 +29,8 @@ STRETCH GOALS
 
 -as a user i will be able to login and track my progress
 
+-as a user i will be able to upload the images and not use an URL
+
 MODELS
 
 - Item.js : (mongoDB as a stretch once comfortable)
@@ -43,8 +46,10 @@ MODELS
 
 ROUTES
 
--Home Page
--Item Route (x 10)
+-index and homepage
+-new item
+-edit item
+-Show item Route
 
 strech routes 
 
