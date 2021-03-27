@@ -12,9 +12,7 @@ USER STORIES
 
 -as a user i will be able to click on another user posted image
 
--as a user i will be able to delete or edit my uploaded image with a precompiled form
-
--as a user i will be able to update the image with a new image with a form
+-as a user i will be able to update the image,name and comment i posted clicking edit and seeing a precompiled form
 
 -as a user i will be able to delete the image i posted with a delete button
 
