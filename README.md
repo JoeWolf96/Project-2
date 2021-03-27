@@ -1,6 +1,7 @@
 # wireframe and user stories
 ![wireframe](/images/main_page.png)
-![wireframe](/images/item_page.png)
+![wireframe](/images/show_page.png)
+![wireframe](/images/new_page.png)
 
 
 USER STORIES
