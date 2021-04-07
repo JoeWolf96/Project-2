@@ -17,7 +17,7 @@
 
  // Set up Database
  // const mongoose = require('mongoose');
- // const mongoURI = "mongodb+srv://LICHqueen96:bounty00@cluster0.ldlbu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+ //
  // const db = mongoose.connection;
 
  // mongoose.connect(mongoURI, {
